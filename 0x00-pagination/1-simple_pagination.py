@@ -49,8 +49,7 @@ class Server:
         list of rows).
         """
         assert type(page) == int and type(page_size) == int
-        assert page > 0 and  page_size > 0
-
+        assert page > 0 and page_size > 0
         page_result = []
         idx_rng = index_range(page, page_size)
         data = self.dataset()
@@ -60,5 +59,3 @@ class Server:
             page_result.append(data[idx])
 
         return page_result
-
-
