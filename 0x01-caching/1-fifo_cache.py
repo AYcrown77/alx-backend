@@ -4,8 +4,6 @@ Caching system module
 """
 
 
-from curses import KEY_SOPTIONS
-
 BaseCaching = __import__('base_caching').BaseCaching
 
 
