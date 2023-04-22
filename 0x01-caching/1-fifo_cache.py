@@ -25,7 +25,7 @@ class FIFOCache(BaseCaching):
             pass
         else:
             if len(self.cache_data) >= BaseCaching.MAX_ITEMS \
-                    and key not in self.cache_data.keys()
+                    and key not in self.cache_data.keys():
                 rem_key = next(iter(self.cache_data.keys()))
                 del self.cache_data[rem_key]
                 print(f"DISCARD: {rem_key}")
