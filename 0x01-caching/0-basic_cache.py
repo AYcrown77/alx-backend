@@ -25,5 +25,4 @@ class BasicCache(BaseCaching):
         """Get an item by key"""
         if key is none or key not in self.cache_data:
             return
-        item = self.cache_data[key]
-        return item
+        return self.cache_data[key]
