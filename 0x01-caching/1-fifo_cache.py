@@ -11,7 +11,6 @@ class FIFOCache(BaseCaching):
     """
     class FIFOCache that inherits from BaseCaching and is a caching system
     """
-    keys_no = []
 
     def __init__(self):
         """Initialization"""
@@ -23,13 +22,13 @@ class FIFOCache(BaseCaching):
         for the key key
         """
         if key is None or item is None:
-            return
-        self.cache_data[key] = item
-        self.keys_no.append(key)
-        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
-            rem_key = self.keys_no.pop(0)
-            del self.cache_data[rem_key]
-            print(f"DISCARD: {rem_key}")
+            pass
+        else:
+            if len(self.cache_data) >= BaseCaching.MAX_ITEMS \
+                    and key not in self.cache_data.keys()
+                rem_key, rem_value = self.cache_data.popitem()
+                print(f"DISCARD: {rem_key}")
+            self.cache_data[key] = item
 
     def get(self, key):
         """gets value from cache key"""
