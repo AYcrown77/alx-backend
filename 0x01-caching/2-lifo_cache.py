@@ -29,11 +29,10 @@ class LIFOCache(BaseCaching):
                 rem_key, rem_value = self.cache_data.popitem()
                 del self.cache_data[rem_key]
                 print(f"DISCARD: {rem_key}")
-        self.cache_data[key] = item
+            self.cache_data[key] = item
 
     def get(self, key):
         """gets value from cache key"""
         if key is None or key not in self.cache_data.keys():
             return None
-        new = self.cache_data[key]
-        return new
+        return self.cache_data[key]
