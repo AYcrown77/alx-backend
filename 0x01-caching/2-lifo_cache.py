@@ -24,7 +24,7 @@ class LIFOCache(BaseCaching):
         """
         if not key or not item:
             return
-        if key in self.cache_data
+        if key in self.cache_data:
             self.cache_data[key] = item
             self.keys_no.append(key)
             return
