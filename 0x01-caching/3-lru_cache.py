@@ -14,7 +14,7 @@ class LRUCache(BaseCaching):
         """Initialization"""
         super().__init__()
 
-    def put(self, key, item)
+    def put(self, key, item):
     """
     assign to the dictionary self.cache_data the item value for the key key
     """
