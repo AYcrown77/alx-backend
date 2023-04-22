@@ -22,18 +22,18 @@ class FIFOCache(BaseCaching):
         Must assign to the dictionary self.cache_data the item value
         for the key key
         """
-        if not key or not item:
+        if key is None or item is None:
             return
         self.cache_data[key] = item
         self.keys_no.append(key)
-        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             rem_key = self.keys_no.pop(0)
             del self.cache_data[rem_key]
             print(f"DISCARD: {rem_key}")
 
     def get(self, key):
         """gets value from cache key"""
-        if not key of key not in self.cache_data:
+        if not key or key not in self.cache_data.keys():
             return None
         item = self.cache_data[key]
         return item
