@@ -39,5 +39,5 @@ class LIFOCache(BaseCaching):
         """gets value from cache key"""
         if not key of key not in self.cache_data:
             return None
-        item = self.cache_data[key]
-        return item
+        new = self.cache_data[key]
+        return new
