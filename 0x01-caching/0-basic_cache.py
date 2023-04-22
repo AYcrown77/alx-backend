@@ -12,7 +12,7 @@ class BasicCache(BaseCaching):
     class BasicCache that inherits from BaseCaching and is a caching system
     """
     def __init__(self):
-        """initializeation"""
+        """initialization"""
         super().__init__()
 
     def put(self, key, item):
@@ -23,6 +23,6 @@ class BasicCache(BaseCaching):
 
     def get(self, key):
         """Get an item by key"""
-        if key is none or key not in self.cache_data:
-            return
+        if key is none or key not in self.cache_data.keys():
+            return None
         return self.cache_data[key]
