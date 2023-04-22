@@ -33,9 +33,8 @@ class LRUCache(BaseCaching):
 
     def get(self, key):
         """gets value from cache key"""
-        if not key or not in self.cache_data:
+        if not key or not in self.cache_data.key():
             return None
         del self.count_dict[key]
         self.count_dict[key] = 1
-        item = self.cache_data[key]
-        return item
+        return self.cache_data[key]
