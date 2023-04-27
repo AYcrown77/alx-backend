@@ -2,7 +2,7 @@
 """Flask Application that renders html"""
 
 from flask import Flask, render_template
-
+from flask_babel import Babel
 
 app = Flask(__name__)
 babel = Babel(app)
@@ -15,7 +15,7 @@ class Config(object):
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
-app.config.from_object('1-app.Config')
+app.config.from_object('3-app.Config')
 
 
 @babel.localeselector
@@ -27,9 +27,9 @@ def get_locale():
 @app.route('/', methods=['GET'])
 def index():
     """
-    renders 0-index.html
+    renders 3-index.html
     """
-    return render_template(3-index.html')
+    return render_template('3-index.html')
 
 
 if __name__ == "__main__":
