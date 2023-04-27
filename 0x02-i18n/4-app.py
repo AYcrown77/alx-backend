@@ -15,7 +15,7 @@ class Config(object):
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
-app.config.from_object('1-app.Config')
+app.config.from_object('4-app.Config')
 
 
 @babel.localeselector
@@ -34,7 +34,7 @@ def index():
     """
     renders 0-index.html
     """
-    return render_template(3-index.html')
+    return render_template('4-index.html')
 
 
 if __name__ == "__main__":
